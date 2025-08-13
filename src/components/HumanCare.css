@@ -40,6 +40,10 @@
 .hc-cta-inner p { color: #335a6e; margin: 0.5rem 0 1rem; }
 .hc-cta-actions { display: flex; gap: 0.8rem; justify-content: center; }
 
+/* Ensure primary/secondary buttons match across pages */
+.btn.btn-primary { background: #1f3a1f; color: #fff9db; border: none; }
+.btn.btn-secondary { background: transparent; color: #1f3a1f; border: 2px solid #1f3a1f; }
+
 @media (max-width: 960px) {
   .hc-hero-inner { grid-template-columns: 1fr; }
   .hc-quick-grid, .hc-suite-grid { grid-template-columns: 1fr; }

@@ -353,6 +353,7 @@ const LandingPage = () => {
               className="btn btn-animal"
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/animal-care')}
             >
               <span>Start Animal Care</span>
               <ArrowRight className="btn-icon" />

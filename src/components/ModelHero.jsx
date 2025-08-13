@@ -29,7 +29,7 @@ function HealthcareTeamModel() {
 
   // Increase overall size and lift a bit for composition
   const s = 0.015
-  return <primitive object={fbx} scale={[s, s, s]} position={[0, -0.25, 0]} />
+  return <primitive object={fbx} scale={[s, s, s]} position={[0, 0.1, 0]} />
 }
 
 const ModelHero = () => {
