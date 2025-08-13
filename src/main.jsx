@@ -38,9 +38,53 @@ function LoadingScreen() {
   )
 }
 
-// App wrapper with quick loading
+// Error fallback component
+function ErrorScreen({ error }) {
+  return (
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      color: 'white',
+      fontFamily: 'Arial, sans-serif',
+      textAlign: 'center',
+      padding: '20px'
+    }}>
+      <h2 style={{ margin: '0 0 20px', fontSize: '24px' }}>Petora</h2>
+      <p style={{ margin: '0 0 20px', opacity: 0.8 }}>Something went wrong while loading the application.</p>
+      <button 
+        onClick={() => window.location.reload()}
+        style={{
+          padding: '12px 24px',
+          background: 'rgba(255,255,255,0.2)',
+          border: '1px solid rgba(255,255,255,0.3)',
+          borderRadius: '8px',
+          color: 'white',
+          cursor: 'pointer',
+          fontSize: '16px'
+        }}
+      >
+        Refresh Page
+      </button>
+      {error && (
+        <details style={{ marginTop: '20px', opacity: 0.7, fontSize: '12px' }}>
+          <summary>Error Details</summary>
+          <pre style={{ textAlign: 'left', maxWidth: '500px', overflow: 'auto' }}>
+            {error.toString()}
+          </pre>
+        </details>
+      )}
+    </div>
+  )
+}
+
+// App wrapper with error handling
 function AppWrapper() {
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     // Show loading for just 300ms to prevent flash
@@ -50,6 +94,10 @@ function AppWrapper() {
 
     return () => clearTimeout(timer)
   }, [])
+
+  if (error) {
+    return <ErrorScreen error={error} />
+  }
 
   if (isLoading) {
     return <LoadingScreen />
@@ -64,4 +112,42 @@ function AppWrapper() {
   )
 }
 
-createRoot(document.getElementById('root')).render(<AppWrapper />)
+// Create root with error handling
+try {
+  const root = createRoot(document.getElementById('root'))
+  root.render(<AppWrapper />)
+} catch (error) {
+  console.error('Failed to render app:', error)
+  // Fallback rendering
+  const rootElement = document.getElementById('root')
+  if (rootElement) {
+    rootElement.innerHTML = `
+      <div style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      ">
+        <h2>Petora</h2>
+        <p>Failed to load the application. Please check your browser console for errors.</p>
+        <button onclick="window.location.reload()" style="
+          padding: 12px 24px;
+          background: rgba(255,255,255,0.2);
+          border: 1px solid rgba(255,255,255,0.3);
+          border-radius: 8px;
+          color: white;
+          cursor: pointer;
+          font-size: 16px;
+        ">
+          Refresh Page
+        </button>
+      </div>
+    `
+  }
+}
