@@ -802,22 +802,15 @@
   font-size: 1rem;
 }
 
-.btn-animal {
-  background: #a8d5ba;
-  color: #1f3a1f;
-  width: 100%;
-  padding: 1.5rem;
-  font-size: 1.2rem;
-  box-shadow: none;
-}
-
+.btn-animal,
 .btn-human {
-  background: #c7e4ca;
-  color: #1f3a1f;
+  background: #1f3a1f;
+  color: #fff9db;
   width: 100%;
   padding: 1.5rem;
   font-size: 1.2rem;
   box-shadow: none;
+  border: none;
 }
 
 /* CTA Section */
@@ -1059,17 +1052,17 @@
 
 .model-hero {
   width: 100%;
-  height: 560px;
+  height: 520px;
   border-radius: 24px;
   background: transparent;
   overflow: hidden;
-  transform: translateY(-20px);
+  transform: translateY(-10px);
 }
 
 @media (max-width: 1200px) {
   .model-hero {
     height: 420px;
-    transform: translateY(-10px);
+    transform: translateY(-4px);
   }
 }
 

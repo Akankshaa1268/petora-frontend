@@ -1,0 +1,45 @@
+/* Animal Care Page aligned to green/yellow theme */
+.ac-page { background: #eef8f0; min-height: 100vh; }
+
+.ac-hero { background: #e6f4e8; padding: 3rem 1rem; }
+.ac-hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center; }
+.ac-hero-left h1 { font-size: 3rem; color: #2f4f2f; font-weight: 900; line-height: 1.1; }
+.ac-hero-left .accent { color: #2b6b4f; }
+.ac-hero-left p { margin-top: 1rem; color: #3c663c; max-width: 560px; }
+.ac-hero-actions { margin-top: 1.25rem; display: flex; gap: 0.8rem; }
+.ac-hero-stats { display: flex; gap: 2rem; margin-top: 1.75rem; color: #3c663c; }
+.ac-hero-stats .num { font-weight: 800; font-size: 1.2rem; }
+.ac-hero-card { position: relative; background: #e6f4e8; border-radius: 18px; height: 320px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); overflow: hidden; display: grid; place-items: center; }
+.ac-hero-card img { width: 80%; opacity: 0.9; }
+.ac-hero-fab { position: absolute; width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: #7cb084; color: #1f3a1f; box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+.ac-hero-fab.fab-top { top: -12px; right: 22px; transform: rotate(-12deg); }
+.ac-hero-fab.fab-bottom { bottom: 16px; left: 22px; background: #f6d24b; color: #3b3b00; }
+
+.ac-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.06); padding: 0.5rem 0.9rem; border-radius: 999px; color: #2f4f2f; font-weight: 600; margin-bottom: 1rem; }
+
+.ac-suite { background: #fff; padding: 3rem 1rem; }
+.ac-suite-header { text-align: center; margin-bottom: 1.5rem; }
+.ac-suite-header h3 { font-size: 2rem; color: #2f4f2f; }
+.ac-suite-header p { color: #3c663c; }
+.ac-suite-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.ac-card { display: flex; gap: 0.9rem; align-items: flex-start; background: #f5fbf6; border: 1px solid #dbeedf; padding: 1.25rem; border-radius: 16px; box-shadow: 0 10px 20px rgba(46, 139, 87, 0.08); }
+.ac-card-icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: #a8d5ba; color: #1f3a1f; }
+.ac-card-content h4 { margin: 0 0 0.4rem 0; color: #2f4f2f; }
+.ac-card-content p { margin: 0; color: #3c663c; }
+
+.ac-cta { background: #e6f4e8; padding: 3rem 1rem; }
+.ac-cta-inner { text-align: center; max-width: 800px; margin: 0 auto; }
+.ac-cta-inner h3 { font-size: 2rem; color: #2f4f2f; }
+.ac-cta-inner .accent { color: #2b6b4f; }
+.ac-cta-inner p { color: #3c663c; margin: 0.5rem 0 1rem; }
+.ac-cta-actions { display: flex; gap: 0.8rem; justify-content: center; }
+
+/* Ensure primary/secondary buttons match across pages */
+.btn.btn-primary { background: #1f3a1f; color: #fff9db; border: none; }
+.btn.btn-secondary { background: transparent; color: #1f3a1f; border: 2px solid #1f3a1f; }
+
+@media (max-width: 960px) {
+  .ac-hero-inner { grid-template-columns: 1fr; }
+  .ac-suite-grid { grid-template-columns: 1fr; }
+}
+
