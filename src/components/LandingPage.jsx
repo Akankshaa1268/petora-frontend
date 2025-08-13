@@ -24,6 +24,7 @@ import {
 import './LandingPage.css'
 import VirusField from './VirusField'
 import ModelHero from './ModelHero'
+import { Link, useNavigate } from 'react-router-dom'
 
 const LandingPage = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -94,8 +95,28 @@ const LandingPage = () => {
     }
   ]
 
+  const navigate = useNavigate()
+
   return (
     <div className="landing-page">
+      {/* Navbar */}
+      <header className="navbar">
+        <div className="nav-inner">
+          <div className="nav-brand">
+            <Link to="/" className="brand-link">Petora</Link>
+          </div>
+          <nav className="nav-links">
+            <a href="#features" className="nav-link">Features</a>
+            <a href="#services" className="nav-link">Services</a>
+            <a href="#contact" className="nav-link">Contact</a>
+          </nav>
+          <div className="nav-actions">
+            <Link to="/auth" className="btn nav-auth-btn">
+              <span>Login / Sign Up</span>
+            </Link>
+          </div>
+        </div>
+      </header>
       {/* Animated Background */}
       <div className="animated-background">
         <div className="floating-shapes">
@@ -164,6 +185,7 @@ const LandingPage = () => {
                 className="btn btn-primary"
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/auth')}
               >
                 <span>Get Started</span>
                 <ArrowRight className="btn-icon" />
@@ -286,7 +308,7 @@ const LandingPage = () => {
 </p>
         </motion.div>
 
-        <div className="services-container">
+        <div className="services-container" id="services">
           {/* Animal Healthcare Card */}
           <motion.div
             initial={{ opacity: 0, x: -100, rotateY: -15 }}
@@ -381,6 +403,7 @@ const LandingPage = () => {
               className="btn btn-human"
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/human-care')}
             >
               <span>Start Human Care</span>
               <ArrowRight className="btn-icon" />
@@ -433,6 +456,7 @@ const LandingPage = () => {
             className="btn btn-primary btn-large"
             whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/auth')}
           >
             <span>Get Started Today</span>
             <ArrowRight className="btn-icon" />

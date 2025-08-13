@@ -1,0 +1,47 @@
+/* Human Care Page */
+.hc-page { background: #eff5ff; min-height: 100vh; }
+
+.hc-hero { background: #cfe0f6; padding: 3rem 1rem; }
+.hc-hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center; }
+.hc-hero-left h1 { font-size: 3rem; color: #214b3a; font-weight: 900; line-height: 1.1; }
+.hc-hero-left .accent { color: #2b6b4f; }
+.hc-hero-left p { margin-top: 1rem; color: #335a6e; max-width: 560px; }
+.hc-hero-actions { margin-top: 1.25rem; display: flex; gap: 0.8rem; }
+.hc-hero-stats { display: flex; gap: 2rem; margin-top: 1.75rem; color: #335a6e; }
+.hc-hero-stats .num { font-weight: 800; font-size: 1.2rem; }
+.hc-hero-card { position: relative; background: #cfe0f6; border-radius: 18px; height: 320px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); overflow: hidden; display: grid; place-items: center; }
+.hc-hero-card img { width: 80%; opacity: 0.9; }
+.hc-hero-fab { position: absolute; width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: #95b4e3; color: #0e2a47; box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+.hc-hero-fab.fab-top { top: -12px; right: 22px; transform: rotate(-12deg); }
+.hc-hero-fab.fab-bottom { bottom: 16px; left: 22px; background: #f6d24b; }
+
+.hc-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.06); padding: 0.5rem 0.9rem; border-radius: 999px; color: #2b4a3e; font-weight: 600; margin-bottom: 1rem; }
+
+.hc-quick { background: #fff; padding: 3rem 1rem; }
+.hc-quick-header { text-align: center; margin-bottom: 1.5rem; }
+.hc-quick-header h3 { font-size: 1.75rem; color: #2b4a3e; }
+.hc-quick-header p { color: #516b7b; }
+.hc-quick-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.hc-card { display: flex; gap: 0.9rem; align-items: flex-start; background: #f8fbff; border: 1px solid #e0e9f5; padding: 1.25rem; border-radius: 16px; box-shadow: 0 10px 20px rgba(14,42,71,0.06); }
+.hc-card-icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: #e7f1ff; color: #0e2a47; }
+.hc-card-content h4 { margin: 0 0 0.4rem 0; color: #2b4a3e; }
+.hc-card-content p { margin: 0; color: #516b7b; }
+
+.hc-suite { background: #fff3a7; padding: 3rem 1rem; }
+.hc-suite-header { text-align: center; margin-bottom: 1.5rem; }
+.hc-suite-header h3 { color: #2b4a3e; font-size: 2.2rem; line-height: 1.15; }
+.hc-suite-header p { color: #4c6a64; max-width: 800px; margin: 0.5rem auto 0; }
+.hc-suite-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+.hc-cta { background: #bcd3f1; padding: 3rem 1rem; }
+.hc-cta-inner { text-align: center; max-width: 800px; margin: 0 auto; }
+.hc-cta-inner h3 { font-size: 2rem; color: #2b4a3e; }
+.hc-cta-inner .accent { color: #2b6b4f; }
+.hc-cta-inner p { color: #335a6e; margin: 0.5rem 0 1rem; }
+.hc-cta-actions { display: flex; gap: 0.8rem; justify-content: center; }
+
+@media (max-width: 960px) {
+  .hc-hero-inner { grid-template-columns: 1fr; }
+  .hc-quick-grid, .hc-suite-grid { grid-template-columns: 1fr; }
+}
+
