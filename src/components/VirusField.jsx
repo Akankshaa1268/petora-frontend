@@ -42,7 +42,7 @@ function VirusField({ active, mouse }) {
         vx: (Math.random() - 0.5) * 0.4 * devicePixelRatioSafe,
         vy: (Math.random() - 0.5) * 0.4 * devicePixelRatioSafe,
         r: 1.6 + Math.random() * 1.2,
-        hue: 200 + Math.random() * 120, // blue to teal range
+        hue: 120 + Math.random() * 40, // green hai bhai
         alpha: 0.5 + Math.random() * 0.5
       }))
     }
