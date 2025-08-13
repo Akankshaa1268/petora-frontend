@@ -1,25 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { 
-  Heart, 
-  Stethoscope, 
   PawPrint, 
   User, 
-  Camera, 
-  MapPin, 
-  MessageCircle, 
   Clock, 
   Shield, 
   Brain,
-  Eye,
-  TrendingUp,
-  Smartphone,
-  Zap,
   Sparkles,
   Star,
   ArrowRight,
   Play,
-  CheckCircle
+  CheckCircle,
+  MapPin
 } from 'lucide-react'
 import './LandingPage.css'
 import VirusField from './VirusField'
@@ -41,59 +33,7 @@ const LandingPage = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  const animalFeatures = [
-    {
-      icon: <Camera className="feature-icon" />,
-      title: "AI-Powered Symptom Detection",
-      description: "Upload images of wounds, skin issues, and injuries. Our AI detects visible symptoms and identifies possible illnesses.",
-      color: "#FF6B6B"
-    },
-    {
-      icon: <Shield className="feature-icon" />,
-      title: "Severity Assessment",
-      description: "Instant severity classification (minor, urgent, emergency) with appropriate first-aid recommendations.",
-      color: "#4ECDC4"
-    },
-    {
-      icon: <MapPin className="feature-icon" />,
-      title: "Veterinary Connect",
-      description: "Find nearby veterinary clinics and professionals for consultation and treatment.",
-      color: "#45B7D1"
-    },
-    {
-      icon: <MessageCircle className="feature-icon" />,
-      title: "Expert Consultation",
-      description: "Connect with vets through chat or call for professional advice and medication suggestions.",
-      color: "#96CEB4"
-    }
-  ]
 
-  const humanFeatures = [
-    {
-      icon: <User className="feature-icon" />,
-      title: "Doctor Recommendations",
-      description: "Get personalized doctor suggestions based on your location and medical needs.",
-      color: "#667eea"
-    },
-    {
-      icon: <Eye className="feature-icon" />,
-      title: "Skin Disease Detection",
-      description: "Advanced AI analysis for skin conditions with instant diagnosis and treatment options.",
-      color: "#764ba2"
-    },
-    {
-      icon: <TrendingUp className="feature-icon" />,
-      title: "Predictive Disease Detection",
-      description: "Population surveillance and early warning systems for disease outbreaks.",
-      color: "#f093fb"
-    },
-    {
-      icon: <Smartphone className="feature-icon" />,
-      title: "AR Wound Healing Timeline",
-      description: "Virtual wound healing visualization with augmented reality for better understanding.",
-      color: "#4facfe"
-    }
-  ]
 
   const navigate = useNavigate()
 
@@ -318,7 +258,6 @@ const LandingPage = () => {
             className="service-card animal-card"
             whileHover={{ rotateY: 5, scale: 1.02 }}
           >
-            <div className="card-glow"></div>
             <div className="card-header">
               <div className="card-icon">
                 <PawPrint className="icon-large" />
@@ -327,26 +266,14 @@ const LandingPage = () => {
               <p>Comprehensive care for your beloved pets with AI-powered diagnosis</p>
             </div>
             
-            <div className="card-features">
-              {animalFeatures.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="feature-item"
-                  style={{ '--accent-color': feature.color }}
-                >
-                  <div className="feature-icon-container">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h4>{feature.title}</h4>
-                    <p>{feature.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="card-image">
+              <div className="animal-image-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=400&h=400&fit=crop&crop=face" 
+                  alt="Happy dog" 
+                  className="service-image"
+                />
+              </div>
             </div>
             
             <motion.button 
@@ -369,7 +296,6 @@ const LandingPage = () => {
             className="service-card human-card"
             whileHover={{ rotateY: -5, scale: 1.02 }}
           >
-            <div className="card-glow"></div>
             <div className="card-header">
               <div className="card-icon">
                 <User className="icon-large" />
@@ -378,26 +304,14 @@ const LandingPage = () => {
               <p>Advanced medical solutions for you and your family with predictive AI</p>
             </div>
             
-            <div className="card-features">
-              {humanFeatures.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="feature-item"
-                  style={{ '--accent-color': feature.color }}
-                >
-                  <div className="feature-icon-container">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h4>{feature.title}</h4>
-                    <p>{feature.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="card-image">
+              <div className="human-image-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face" 
+                  alt="Healthcare professional" 
+                  className="service-image"
+                />
+              </div>
             </div>
             
             <motion.button 
