@@ -141,8 +141,7 @@ const LandingPage = () => {
             </h1>
             
             <p className="hero-subtitle">
-              Revolutionary healthcare platform for both animals and humans. 
-              Experience the future of medical care with cutting-edge AI technology.
+              Smart healthcare for every life you care about. Petora blends AI precision with human compassion bringing advanced diagnosis, instant analysis, and expert care to both humans and animals.
             </p>
             
             <div className="hero-stats">
@@ -213,8 +212,8 @@ const LandingPage = () => {
             <Star className="star-icon" />
             <span>Why Choose Petora?</span>
           </div>
-          <h2>Cutting-edge technology meets compassionate healthcare</h2>
-          <p>Experience the future of medical care with our revolutionary platform</p>
+          <h2> From early detection to expert connections, Petora is built to keep every life healthier.</h2>
+          <p>AI precision meets real world care</p>
         </motion.div>
         
         <div className="features-grid">
@@ -281,8 +280,10 @@ const LandingPage = () => {
             <Sparkles className="sparkle-icon" />
             <span>Our Services</span>
           </div>
-          <h2>Comprehensive healthcare solutions for every family member</h2>
-          <p>From pets to humans, we've got everyone covered with cutting-edge technology</p>
+          <h2>One platform, endless care</h2>
+          <p>From family members to furry friends, Petora offers AI-powered symptom checks, real-time triage, and connections to nearby professionals.
+
+</p>
         </motion.div>
 
         <div className="services-container">
@@ -427,7 +428,7 @@ const LandingPage = () => {
             <span>Join the Future</span>
           </div>
           <h2>Ready to Experience the Future of Healthcare?</h2>
-          <p>Join thousands of families who trust Petora for their healthcare needs. Start your journey today!</p>
+          <p>Start your journey toward better, faster, and more compassionate healthcare today.</p>
           <motion.button 
             className="btn btn-primary btn-large"
             whileHover={{ scale: 1.05, y: -5 }}
@@ -441,5 +442,6 @@ const LandingPage = () => {
     </div>
   )
 }
+
 
 export default LandingPage 
