@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Brain, Shield, Activity, Star, User, Calendar, FileText, Camera } from 'lucide-react'
 import './HumanCare.css'
+import ThreeDAssessment from './ThreeDAssessment'
 
 const Badge = ({ icon: Icon, text }) => (
   <div className="hc-badge">
@@ -28,6 +29,8 @@ const Card = ({ icon: Icon, title, desc }) => (
 )
 
 export default function HumanCare() {
+  const [showThreeD, setShowThreeD] = useState(false);
+
   return (
     <div className="hc-page">
       <header className="navbar">
@@ -57,6 +60,13 @@ export default function HumanCare() {
             <div className="hc-hero-actions">
               <Link to="/auth" className="btn btn-primary">Start Health Check</Link>
               <Link to="/auth" className="btn btn-secondary">Consult Doctor</Link>
+              <button 
+                className="btn btn-secondary" 
+                onClick={() => setShowThreeD(true)}
+                style={{ background: '#a8d5ba', color: '#1f3a1f' }}
+              >
+                3D Assessment
+              </button>
             </div>
             <div className="hc-hero-stats">
               <div><div className="num">99%</div><div className="label">Accuracy</div></div>
@@ -115,6 +125,10 @@ export default function HumanCare() {
           </div>
         </div>
       </section>
+
+      {showThreeD && (
+        <ThreeDAssessment onClose={() => setShowThreeD(false)} />
+      )}
     </div>
   )
 }

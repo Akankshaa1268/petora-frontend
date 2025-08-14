@@ -1,0 +1,553 @@
+/* ThreeD Assessment Styles */
+.three-d-assessment {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff9db;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.assessment-header {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.back-button {
+  background: #2f4f2f;
+  color: #fff9db;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(47, 79, 47, 0.3);
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(47, 79, 47, 0.4);
+  background: #1f3a1f;
+}
+
+.assessment-header h1 {
+  color: #2f4f2f;
+  background: linear-gradient(45deg, rgba(168, 213, 186, 0.9), rgba(199, 228, 202, 0.9));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(47, 79, 47, 0.2);
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  text-shadow: 0 0 10px rgba(168, 213, 186, 0.5);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* View Controls */
+.view-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-btn {
+  background: rgba(168, 213, 186, 0.8);
+  color: #2f4f2f;
+  border: 2px solid #a8d5ba;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  backdrop-filter: blur(10px);
+}
+
+.view-btn:hover {
+  background: #a8d5ba;
+  transform: translateY(-1px);
+}
+
+.view-btn.active {
+  background: #2f4f2f;
+  color: #fff9db;
+  border-color: #2f4f2f;
+}
+
+/* Toolbar */
+.toolbar {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tool-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #2f4f2f;
+  border: 2px solid #a8d5ba;
+  padding: 0.75rem 1rem;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(47, 79, 47, 0.2);
+}
+
+.tool-btn:hover {
+  background: #a8d5ba;
+  transform: translateX(5px);
+  box-shadow: 0 6px 20px rgba(47, 79, 47, 0.3);
+}
+
+/* Symptom Checker */
+.symptom-checker {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  z-index: 15;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #a8d5ba;
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(47, 79, 47, 0.2);
+  min-width: 300px;
+}
+
+.symptom-checker h3 {
+  color: #2f4f2f;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.symptom-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e6e0b8;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  color: #2f4f2f;
+}
+
+.symptom-input:focus {
+  outline: none;
+  border-color: #a8d5ba;
+  box-shadow: 0 0 10px rgba(168, 213, 186, 0.3);
+}
+
+.check-btn {
+  background: linear-gradient(45deg, #a8d5ba, #7cb084);
+  color: #1f3a1f;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.check-btn:hover {
+  background: linear-gradient(45deg, #7cb084, #5a9a6a);
+  transform: translateY(-2px);
+}
+
+.highlighted-parts {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(168, 213, 186, 0.2);
+  border-radius: 10px;
+  border-left: 4px solid #a8d5ba;
+}
+
+.highlighted-parts p {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: #2f4f2f;
+}
+
+.highlighted-parts ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.highlighted-parts li {
+  color: #2f4f2f;
+  margin: 0.25rem 0;
+}
+
+.three-d-container {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  position: relative;
+  z-index: 1;
+}
+
+.three-d-container:active {
+  cursor: grabbing;
+}
+
+.three-d-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #2f4f2f;
+  font-size: 1.2rem;
+  z-index: 100;
+  background: rgba(255, 249, 219, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(47, 79, 47, 0.2);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { 
+    text-shadow: 0 0 5px #2f4f2f, 0 0 10px #2f4f2f, 0 0 15px #2f4f2f;
+    box-shadow: 0 0 10px rgba(47, 79, 47, 0.3);
+  }
+  to { 
+    text-shadow: 0 0 10px #2f4f2f, 0 0 20px #2f4f2f, 0 0 30px #2f4f2f;
+    box-shadow: 0 0 20px rgba(47, 79, 47, 0.5);
+  }
+}
+
+/* Enhanced Popup Styles */
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 90vw;
+  max-height: 80vh;
+  background: #ffffff;
+  color: #2f4f2f;
+  border-radius: 20px;
+  border: 2px solid #a8d5ba;
+  padding: 2rem;
+  z-index: 20;
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(47, 79, 47, 0.3);
+  display: none;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-y: auto;
+}
+
+.popup.show {
+  display: block !important;
+  animation: popupShow 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.medical-popup h2 {
+  color: #2f4f2f;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #a8d5ba;
+  padding-bottom: 0.5rem;
+}
+
+.medical-popup h3 {
+  color: #1f3a1f;
+  margin: 1.5rem 0 0.75rem 0;
+  font-size: 1.1rem;
+}
+
+.medical-popup ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.medical-popup li {
+  margin: 0.25rem 0;
+}
+
+.symptoms-section {
+  background: rgba(168, 213, 186, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.conditions-section {
+  margin-bottom: 1rem;
+}
+
+.condition-card {
+  background: #fff;
+  border: 1px solid #e6e0b8;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0.75rem 0;
+  border-left: 4px solid #a8d5ba;
+}
+
+.condition-card.mild {
+  border-left-color: #4ade80;
+}
+
+.condition-card.moderate {
+  border-left-color: #fbbf24;
+}
+
+.condition-card.urgent {
+  border-left-color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.condition-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2f4f2f;
+  font-size: 1rem;
+}
+
+.condition-card p {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+}
+
+.severity-mild {
+  color: #059669;
+  font-weight: 600;
+}
+
+.severity-moderate {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.severity-urgent {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.emergency-section {
+  background: rgba(239, 68, 68, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.emergency-list {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.emergency-list li {
+  color: #dc2626;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.tests-section {
+  background: rgba(59, 130, 246, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(45deg, #a8d5ba, #7cb084);
+  color: #1f3a1f;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 213, 186, 0.4);
+}
+
+.popup button {
+  background: linear-gradient(45deg, #a8d5ba, #7cb084);
+  color: #1f3a1f;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(168, 213, 186, 0.3);
+  font-size: 0.9rem;
+}
+
+.popup button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 213, 186, 0.4);
+  background: linear-gradient(45deg, #7cb084, #5a9a6a);
+}
+
+@keyframes popupShow {
+  0% { 
+    opacity: 0; 
+    transform: translate(-50%, -50%) scale(0.8) rotateY(-90deg);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  }
+}
+
+.instructions {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 249, 219, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(47, 79, 47, 0.2);
+  padding: 1.5rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  color: #2f4f2f;
+  z-index: 10;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+.instructions strong {
+  color: #1f3a1f;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .assessment-header {
+    flex-direction: column;
+    gap: 1rem;
+    top: 10px;
+  }
+
+  .assessment-header h1 {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .back-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .view-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .toolbar {
+    top: 120px;
+    left: 10px;
+  }
+
+  .symptom-checker {
+    top: 120px;
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+  }
+
+  .popup {
+    width: 90vw;
+    max-width: 350px;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .instructions {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    max-width: none;
+    font-size: 0.75rem;
+    padding: 1rem;
+  }
+
+  .loading {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .assessment-header h1 {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .popup {
+    padding: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .instructions {
+    font-size: 0.7rem;
+    padding: 0.75rem;
+  }
+
+  .tool-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
