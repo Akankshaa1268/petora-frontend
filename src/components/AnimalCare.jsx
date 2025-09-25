@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Camera, AlertTriangle, MapPin, MessageCircle, Calendar, FileText, Star } from 'lucide-react'
 import './AnimalCare.css'
+import PetDiagnosis from './PetDiagnosis'
 
 const Badge = ({ icon: Icon, text }) => (
   <div className="ac-badge">
@@ -28,6 +29,8 @@ const Card = ({ icon: Icon, title, desc }) => (
 )
 
 export default function AnimalCare() {
+  const [showPetDiagnosis, setShowPetDiagnosis] = useState(false);
+
   return (
     <div className="ac-page">
       <header className="navbar">
@@ -55,7 +58,12 @@ export default function AnimalCare() {
               Advanced AI diagnosis, instant health assessments, and direct access to veterinary experts. Get the care your beloved pets deserve, anytime, anywhere.
             </p>
             <div className="ac-hero-actions">
-              <Link to="/auth" className="btn btn-primary">Start Diagnosis</Link>
+              <button 
+                className="btn btn-primary" 
+                onClick={() => setShowPetDiagnosis(true)}
+              >
+                Start Diagnosis
+              </button>
               <Link to="/auth" className="btn btn-secondary">Call Expert</Link>
             </div>
             <div className="ac-hero-stats">
@@ -97,11 +105,20 @@ export default function AnimalCare() {
           <h3>Ready to Give Your Pet<br /><span className="accent">The Best Care?</span></h3>
           <p>Join thousands of pet owners who trust Petora for their pet's health and wellbeing.</p>
           <div className="ac-cta-actions">
-            <Link to="/auth" className="btn btn-primary">Upload Photo Now</Link>
+            <button 
+              className="btn btn-primary" 
+              onClick={() => setShowPetDiagnosis(true)}
+            >
+              Upload Photo Now
+            </button>
             <Link to="/auth" className="btn btn-secondary">Chat with Vet</Link>
           </div>
         </div>
       </section>
+      
+      {showPetDiagnosis && (
+        <PetDiagnosis onClose={() => setShowPetDiagnosis(false)} />
+      )}
     </div>
   )
 }

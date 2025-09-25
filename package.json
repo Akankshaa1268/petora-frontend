@@ -12,6 +12,8 @@
   "dependencies": {
     "@react-three/drei": "^10.6.1",
     "@react-three/fiber": "^9.3.0",
+    "@tensorflow/tfjs": "^4.17.0",
+    "axios": "^1.6.7",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.539.0",
     "react": "^19.1.1",

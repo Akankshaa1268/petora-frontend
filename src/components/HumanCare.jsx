@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Brain, Shield, Activity, Star, User, Calendar, FileText, Camera } from 'lucide-react'
 import './HumanCare.css'
 import ThreeDAssessment from './ThreeDAssessment'
+import SkinDiseaseDetector from './SkinDiseaseDetector'
 
 const Badge = ({ icon: Icon, text }) => (
   <div className="hc-badge">
@@ -30,6 +31,7 @@ const Card = ({ icon: Icon, title, desc }) => (
 
 export default function HumanCare() {
   const [showThreeD, setShowThreeD] = useState(false);
+  const [showSkinDetector, setShowSkinDetector] = useState(false);
 
   return (
     <div className="hc-page">
@@ -66,6 +68,13 @@ export default function HumanCare() {
                 style={{ background: '#a8d5ba', color: '#1f3a1f' }}
               >
                 3D Assessment
+              </button>
+              <button 
+                className="btn btn-secondary" 
+                onClick={() => setShowSkinDetector(true)}
+                style={{ background: '#fbbf24', color: '#92400e' }}
+              >
+                Skin Analysis
               </button>
             </div>
             <div className="hc-hero-stats">
@@ -128,6 +137,10 @@ export default function HumanCare() {
 
       {showThreeD && (
         <ThreeDAssessment onClose={() => setShowThreeD(false)} />
+      )}
+      
+      {showSkinDetector && (
+        <SkinDiseaseDetector onClose={() => setShowSkinDetector(false)} />
       )}
     </div>
   )

@@ -1,0 +1,84 @@
+{
+  "models": {
+    "human-health": {
+      "skin-disease-detection": {
+        "name": "Skin Disease Classifier",
+        "version": "1.0.0",
+        "type": "image-classification",
+        "framework": "tensorflow",
+        "file_path": "models/human-health/skin-disease/model.weights.h5",
+        "classes": [
+          "acne", "eczema", "melanoma", "psoriasis", "rosacea", 
+          "vitiligo", "dermatitis", "healthy", "mole", "rash"
+        ],
+        "description": "Detects and classifies various skin conditions from images",
+        "input_shape": [224, 224, 3]
+      },
+      "symptom-analyzer": {
+        "name": "Symptom Analysis Model",
+        "version": "1.0.0",
+        "type": "text-classification",
+        "framework": "tensorflow",
+        "file_path": "models/human-health/symptom-analysis/model.h5",
+        "classes": [
+          "respiratory", "cardiovascular", "neurological", "gastrointestinal",
+          "musculoskeletal", "dermatological", "endocrine", "emergency"
+        ],
+        "description": "Analyzes text descriptions of symptoms to categorize health concerns",
+        "max_text_length": 512
+      },
+      "risk-assessment": {
+        "name": "Health Risk Assessment",
+        "version": "1.0.0",
+        "type": "regression",
+        "framework": "tensorflow",
+        "file_path": "models/human-health/risk-assessment/model.h5",
+        "input_features": [
+          "age", "weight", "height", "blood_pressure", "cholesterol",
+          "smoking", "exercise", "family_history"
+        ],
+        "description": "Assesses health risks based on lifestyle and medical data"
+      }
+    },
+    "animal-health": {
+      "pet-diagnosis": {
+        "name": "Pet Health Diagnosis",
+        "version": "1.0.0",
+        "type": "image-classification",
+        "framework": "tensorflow",
+        "file_path": "models/animal-health/pet-diagnosis/model.animalweights.h5",
+        "classes": [
+          "healthy", "skin_condition", "eye_problem", "ear_infection",
+          "dental_issue", "injury", "parasite", "allergy", "digestive_issue"
+        ],
+        "description": "Diagnoses common pet health issues from photos",
+        "input_shape": [256, 256, 3]
+      },
+      "breed-detection": {
+        "name": "Pet Breed Classifier",
+        "version": "1.0.0",
+        "type": "image-classification",
+        "framework": "tensorflow",
+        "file_path": "models/animal-health/breed-detection/model.h5",
+        "classes": [
+          "labrador", "golden_retriever", "german_shepherd", "bulldog",
+          "poodle", "beagle", "rottweiler", "siberian_husky", "mixed_breed"
+        ],
+        "description": "Identifies pet breeds from images",
+        "input_shape": [224, 224, 3]
+      }
+    }
+  },
+  "api": {
+    "base_url": "http://localhost:8000",
+    "endpoints": {
+      "predict": "/predict",
+      "predict_text": "/predict/text",
+      "upload_model": "/models/upload",
+      "health_check": "/health",
+      "list_models": "/models"
+    },
+    "timeout": 30000,
+    "max_file_size": 10485760
+  }
+}

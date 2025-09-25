@@ -5,6 +5,8 @@ import LandingPage from './components/LandingPage'
 import AuthPage from './components/AuthPage'
 import HumanCare from './components/HumanCare'
 import AnimalCare from './components/AnimalCare'
+import ModelTest from './components/ModelTest'
+import SkinDiseasePredictor from './components/SkinDiseasePredictor'
 
 // Simple Error Boundary
 class ErrorBoundary extends React.Component {
@@ -63,11 +65,15 @@ function App() {
   return (
     <ErrorBoundary>
       <div className="App">
+        
+
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/human-care" element={<HumanCare />} />
           <Route path="/animal-care" element={<AnimalCare />} />
+          <Route path="/test" element={<ModelTest />} />
+          <Route path="/skin-disease" element={<SkinDiseasePredictor />} />
         </Routes>
       </div>
     </ErrorBoundary>
